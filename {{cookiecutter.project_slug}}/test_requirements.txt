@@ -1,0 +1,9 @@
+coverage
+ipdb
+pytest
+pytest-cov
+flake8
+flake8-docstrings
+pep8
+pep8-naming
+isort
