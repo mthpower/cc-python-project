@@ -22,14 +22,10 @@ Quickstart
 
 Install cookiecutter:
 
-```bash
-pip install cookiecutter
-```
+``$ pip install cookiecutter``
 
 Scaffold a project:
 
-```bash
-$ cookiecutter gh:mthpower/cc-python-project
-```
+``$ cookiecutter gh:mthpower/cc-python-project``
 
 And follow the prompts.
