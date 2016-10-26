@@ -14,8 +14,10 @@ Features
 * A correct Python Package with a ``setup.py``
 * Requirements freezing workflow with ``pip-tools``
 * Python 3 only
+* Makefile for common development tasks
+* Dockerfile
 
-N.B.: This is aimed at being a starting point for a Python project, not a python library. I would have included tools publishing to PyPI and potentially 2/3 compatability if that was the aim.
+N.B.: This is aimed at being a starting point for a Python project, not a python library.
 
 Quickstart
 ----------

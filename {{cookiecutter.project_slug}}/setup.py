@@ -20,4 +20,9 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
+    entry_points={
+        'console_scripts': [
+            '{{cookiecutter.project_slug}} = {{cookiecutter.py_namespace}}.{{cookiecutter.py_namespace}}:main',
+        ],
+    },
 )
