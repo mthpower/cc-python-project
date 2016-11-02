@@ -28,7 +28,5 @@ Are compiled to ``requirements.txt``
 
 * Pinned dependencies
 * Define the build
-* Has --no-deps, --index-url, --extra-index-url etc.
-
 
 .. _`pip-tools`: https://github.com/nvie/pip-tools

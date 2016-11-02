@@ -4,8 +4,6 @@
 #
 #    pip-compile --output-file test_requirements.txt test_requirements.in
 #
---no-deps
-
 appnope==0.1.0            # via ipython
 coverage==4.2
 decorator==4.0.10         # via ipython, traitlets
