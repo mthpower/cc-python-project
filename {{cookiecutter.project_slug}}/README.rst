@@ -17,13 +17,15 @@ A Makefile is provided with common tasks.
 Dependency Workflow
 -------------------
 
-This project uses `pip-tools`_ to manage dependencies. In short,
+This project uses `pip-tools`_ to manage dependencies.
 
-``requirements.in``
+In short, ``requirements.in``
+
 * Unpinned or SemVer ranges
 * Not passed to pip
 
 Are compiled to ``requirements.txt``
+
 * Pinned dependencies
 * Define the build
 * Has --no-deps, --index-url, --extra-index-url etc.

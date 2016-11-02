@@ -1,9 +1,11 @@
+-r requirements.txt
+
 coverage
-ipdb
-pytest
-pytest-cov
 flake8
 flake8-docstrings
+ipdb
+isort
 pep8
 pep8-naming
-isort
+pytest
+pytest-cov
