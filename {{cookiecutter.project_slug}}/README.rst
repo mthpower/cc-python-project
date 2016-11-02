@@ -16,7 +16,7 @@ A Makefile is provided with common tasks::
     $ make help
 
     clean - remove build artifacts and python artifacts
-    .env - make a virtualenv and activate it
+    .env - make a virtualenv
     lint - check style with flake8
     isort - check import order with isort
     freeze-requirements - freeze the requirements with pip-compile

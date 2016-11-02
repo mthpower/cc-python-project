@@ -7,7 +7,7 @@ pip-compile = $(bin)/pip-compile
 
 help:
 	@echo "clean - remove build artifacts and python artifacts"
-	@echo ".env - make a virtualenv and activate it"
+	@echo ".env - make a virtualenv"
 	@echo "lint - check style with flake8"
 	@echo "isort - check import order with isort"
 	@echo "freeze-requirements - freeze the requirements with pip-compile"
@@ -21,16 +21,16 @@ clean:
 	find . -name '*.pyc' -exec rm -f {} +
 	find . -name '*.pyo' -exec rm -f {} +
 
-lint:
+lint: .env
 	$(tox) -e lint
 
-isort:
+isort: .env
 	$(tox) -e isort
 
-test:
+test: .env
 	$(tox)
 
-freeze-requirements:
+freeze-requirements: .env
 	$(pip-compile) requirements.in
 	$(pip-compile) test_requirements.in
 
