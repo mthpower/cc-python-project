@@ -1,5 +1,10 @@
 .PHONY: help clean lint isort test freeze-requirements
 
+bin = .env/bin
+pip = $(bin)/pip
+tox = $(bin)/tox
+pip-compile = $(bin)/pip-compile
+
 help:
 	@echo "clean - remove build artifacts and python artifacts"
 	@echo ".env - make a virtualenv and activate it"
@@ -16,27 +21,22 @@ clean:
 	find . -name '*.pyc' -exec rm -f {} +
 	find . -name '*.pyo' -exec rm -f {} +
 
-lint: .env
-	tox -e lint
+lint:
+	$(tox) -e lint
 
-isort: .env
-	tox -e isort
+isort:
+	$(tox) -e isort
 
-test: .env
-	tox
+test:
+	$(tox)
 
-requirements.txt: .env requirements.in
-	pip-compile requirements.in
-
-test_requirements.txt: .env requirements.txt test_requirements.in
-	pip-compile test_requirements.in
-
-freeze-requirements: .env *requirements.txt
+freeze-requirements:
+	$(pip-compile) requirements.in
+	$(pip-compile) test_requirements.in
 
 .env:
 	rm -rf ./.env/
 	virtualenv .env
-	./.env/bin/pip install --upgrade pip
-	./.env/bin/pip install --upgrade setuptools wheel
-	./.env/bin/pip install tox ipdb pip-tools
-	. ./.env/bin/activate
+	$(pip) install --upgrade pip
+	$(pip) install --upgrade setuptools wheel
+	$(pip) install tox ipdb pip-tools
