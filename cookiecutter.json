@@ -1,10 +1,10 @@
 {
   "full_name": "Matthew Power",
   "email": "matthew@mthpower.uk",
-  "github_username": "mthpower",
   "project_name": "Python Boilerplate",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
   "py_namespace": "{{ cookiecutter.project_slug.replace('-', '_') }}",
   "project_short_description": "Boilerplate to create a Python package.",
+  "project_homepage": "https://github.com/mthpower/python-boilerplate",
   "version": "0.1.0"
 }

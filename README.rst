@@ -11,7 +11,7 @@ Features
 
 * Testing with ``pytest``
 * Reproducable testing with ``tox``
-* A correct Python Package with a ``setup.py``
+* Easy building of wheels with ``flit``
 * Requirements freezing workflow with ``pip-tools``
 * Python 3 only
 * Makefile for common development tasks
@@ -21,6 +21,11 @@ N.B.: This is aimed at being a starting point for a Python project, not a python
 
 Quickstart
 ----------
+
+Prerequisites:
+
+* Python > 3.4
+* Docker
 
 Install cookiecutter:
 
