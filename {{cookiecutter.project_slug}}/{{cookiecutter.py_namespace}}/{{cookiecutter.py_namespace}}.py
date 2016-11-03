@@ -9,9 +9,12 @@ def format_datetime():
 
 def main():  # pragma: no cover
     """Entrypoint invoked via a console script."""
-    while True:
-        print(format_datetime())
-        sleep(1)
+    try:
+        while True:
+            print(format_datetime())
+            sleep(1)
+    except KeyboardInterrupt:
+        pass
 
 
 if __name__ == '__main__':  # pragma: no cover

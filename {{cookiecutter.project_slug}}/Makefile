@@ -51,4 +51,4 @@ docker-build: build
 	docker build . -t {{cookiecutter.project_slug}}
 
 docker-run: docker-build
-	docker run {{cookiecutter.project_slug}}
+	docker run -it {{cookiecutter.project_slug}}
