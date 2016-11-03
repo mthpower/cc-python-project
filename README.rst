@@ -24,7 +24,7 @@ Quickstart
 
 Prerequisites:
 
-* Python > 3.4
+* Python == 3.5
 * Docker
 
 Install cookiecutter:

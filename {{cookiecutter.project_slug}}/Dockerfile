@@ -1,7 +1,6 @@
 FROM python:3.5-alpine
 
-RUN mkdir -p /opt/{{cookiecutter.project_slug}}
-WORKDIR /opt/{{cookiecutter.project_slug}}
+WORKDIR /usr/src/{{cookiecutter.project_slug}}
 
 COPY requirements.txt .
 COPY dist/{{cookiecutter.py_namespace}}*.whl .

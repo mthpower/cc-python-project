@@ -1,11 +1,18 @@
-def echo_string(input_string):
-    """Return the same string that you passed in."""
-    return input_string
+from datetime import datetime
+from time import sleep
 
 
-def main():
-    print(echo_string('foo'))
+def format_datetime():
+    """Return a pretty formatted Datetime."""
+    return datetime.now().replace(microsecond=0).isoformat(sep=' ')
 
 
-if __name__ == '__main__':
+def main():  # pragma: no cover
+    """Entrypoint invoked via a console script."""
+    while True:
+        print(format_datetime())
+        sleep(1)
+
+
+if __name__ == '__main__':  # pragma: no cover
     main()

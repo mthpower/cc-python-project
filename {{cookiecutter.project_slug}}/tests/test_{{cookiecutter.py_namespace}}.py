@@ -1,5 +1,8 @@
+from freezegun import freeze_time
+
 from {{cookiecutter.py_namespace}} import {{cookiecutter.py_namespace}}
 
 
-def test_echo_string():
-    assert {{cookiecutter.py_namespace}}.echo_string('foo') == 'foo'
+@freeze_time('2016-01-01 00:00:00')
+def test_pretty_format_date():
+    assert {{cookiecutter.py_namespace}}.format_datetime() == '2016-01-01 00:00:00'
