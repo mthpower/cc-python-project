@@ -7,7 +7,7 @@ pip-compile = $(bin)/pip-compile
 
 help:
 	@echo "clean - remove build artifacts and python artifacts"
-	@echo ".env - make a virtualenv"
+	@echo ".env - make a virtual environment"
 	@echo "lint - check style with flake8"
 	@echo "isort - check import order with isort"
 	@echo "freeze-requirements - freeze the requirements with pip-compile"
@@ -35,8 +35,7 @@ freeze-requirements: .env
 	$(pip-compile) test_requirements.in
 
 .env:
-	rm -rf ./.env/
-	virtualenv .env
+	python3 -m venv .env --clear
 	$(pip) install --upgrade pip
-	$(pip) install --upgrade setuptools wheel
-	$(pip) install tox ipdb pip-tools
+	$(pip) install --upgrade wheel
+	$(pip) install --upgrade tox pip-tools flit
