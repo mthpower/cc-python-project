@@ -4,11 +4,11 @@
 #
 #    pip-compile --output-file test_requirements.txt test_requirements.in
 #
-configparser==3.5.0       # via flake8
 coverage==4.2
-enum34==1.1.6             # via flake8
+docutils==0.12            # via flit
 flake8-docstrings==1.0.2
 flake8==3.0.4
+flit==0.10
 isort==4.2.5
 mccabe==0.5.2             # via flake8
 pep8-naming==0.4.1
@@ -19,3 +19,6 @@ pydocstyle==1.1.1         # via flake8-docstrings
 pyflakes==1.2.3           # via flake8
 pytest-cov==2.4.0
 pytest==3.0.3
+requests-download==0.1.1  # via flit
+requests==2.11.1          # via flit, requests-download
+zipfile36==0.1.3          # via flit

@@ -1,5 +1,0 @@
-include tox.ini
-include README.rst
-include flit.ini
-
-prune tests
