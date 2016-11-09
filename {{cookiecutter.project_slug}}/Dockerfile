@@ -9,4 +9,4 @@ RUN pip install --no-cache-dir -U pip
 RUN pip install --no-cache-dir --no-deps -r requirements.txt
 RUN pip install {{cookiecutter.py_namespace}}*.whl
 
-CMD {{cookiecutter.project_slug}}
+CMD [ "{{cookiecutter.project_slug}}" ]
