@@ -1,6 +1,7 @@
 .PHONY: help clean build lint isort test freeze-requirements docker-build docker-run
 
 bin = .env/bin
+python = $(bin)/python
 pip = $(bin)/pip
 tox = $(bin)/tox
 pip-compile = $(bin)/pip-compile
@@ -20,8 +21,7 @@ help:
 .env:
 	python3 -m venv .env --clear
 	$(pip) install --upgrade pip
-	$(pip) install --upgrade wheel
-	$(pip) install --upgrade tox pip-tools flit
+	$(pip) install --upgrade wheel setuptools tox pip-tools
 
 clean:
 	rm -rf build/
@@ -32,7 +32,7 @@ clean:
 	find . -name '*.pyo' -exec rm -f {} +
 
 build: .env clean
-	FLIT_NO_NETWORK=True $(flit) wheel
+	$(python) setup.py bdist_wheel
 
 lint: .env
 	$(tox) -e lint
