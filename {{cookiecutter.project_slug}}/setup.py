@@ -1,11 +1,20 @@
 import os
+import re
 from setuptools import setup
 
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
+with open('{{cookiecutter.py_namespace}}/__init__.py', 'r') as f:
+    version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
+                        f.read(), re.MULTILINE).group(1)
+
+if not version:
+    raise RuntimeError('Cannot find version information')
+
+
 setup(
     name='{{cookiecutter.project_slug}}',
-    version='{{cookiecutter.version}}',
+    version=version,
     packages=('{{cookiecutter.py_namespace}}',),
     description='{{cookiecutter.project_short_description}}',
     long_description=README,

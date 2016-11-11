@@ -5,7 +5,6 @@ python = $(bin)/python
 pip = $(bin)/pip
 tox = $(bin)/tox
 pip-compile = $(bin)/pip-compile
-flit=$(bin)/flit
 
 help:
 	@echo "clean - remove build artifacts and python artifacts"
@@ -50,5 +49,5 @@ freeze-requirements: .env
 docker-build: build
 	docker build . -t {{cookiecutter.project_slug}}
 
-docker-run: docker-build
+docker-run:
 	docker run -it {{cookiecutter.project_slug}}

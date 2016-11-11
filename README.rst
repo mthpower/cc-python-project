@@ -11,7 +11,7 @@ Features
 
 * Testing with ``pytest``
 * Reproducable testing with ``tox``
-* Easy building of wheels with ``flit``
+* Easy building of wheels with a ``setup.py``
 * Requirements freezing workflow with ``pip-tools``
 * Python 3 only
 * Makefile for common development tasks

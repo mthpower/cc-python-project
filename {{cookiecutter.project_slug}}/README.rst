@@ -22,7 +22,7 @@ A Makefile is provided with common tasks::
     freeze-requirements - freeze the requirements with pip-compile
     test - run tox
     docker-build - build a docker container
-    docker-run - run the built docker container in the foreground
+    docker-run - run the latest built docker container in the foreground
 
 
 
