@@ -43,8 +43,8 @@ test: .env
 	$(tox)
 
 freeze-requirements: .env
-	$(pip-compile) requirements.in
-	$(pip-compile) test_requirements.in
+	$(pip-compile) --generate-hashes requirements.in
+	$(pip-compile) --generate-hashes test_requirements.in
 
 docker-build: build
 	docker build . -t {{cookiecutter.project_slug}}
