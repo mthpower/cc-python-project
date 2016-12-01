@@ -2,8 +2,11 @@
 
 coverage
 flake8
+flake8-coding
+flake8-commas
 flake8-docstrings
-flit
+flake8-isort
+freezegun
 isort
 pep8
 pep8-naming

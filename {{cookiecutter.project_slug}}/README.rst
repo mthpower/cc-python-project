@@ -40,5 +40,6 @@ Are compiled to ``requirements.txt``
 
 * Pinned dependencies
 * Define the build
+* Hashes added.
 
 .. _`pip-tools`: https://github.com/nvie/pip-tools

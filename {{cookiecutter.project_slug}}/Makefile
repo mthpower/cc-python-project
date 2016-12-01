@@ -5,12 +5,13 @@ python = $(bin)/python
 pip = $(bin)/pip
 tox = $(bin)/tox
 pip-compile = $(bin)/pip-compile
+isort = $(bin)/isort
 
 help:
 	@echo "clean - remove build artifacts and python artifacts"
 	@echo ".env - make a virtual environment"
 	@echo "lint - check style with flake8"
-	@echo "isort - check import order with isort"
+	@echo "isort - check and update import order with isort"
 	@echo "freeze-requirements - freeze the requirements with pip-compile"
 	@echo "test - run tox"
 	@echo "docker-build - build a docker container"
@@ -20,7 +21,7 @@ help:
 .env:
 	python3 -m venv .env --clear
 	$(pip) install --upgrade pip
-	$(pip) install --upgrade wheel setuptools tox pip-tools
+	$(pip) install --upgrade wheel setuptools tox pip-tools isort
 
 clean:
 	rm -rf build/
@@ -37,7 +38,7 @@ lint: .env
 	$(tox) -e lint
 
 isort: .env
-	$(tox) -e isort
+	$(isort) -rc {{cookiecutter.py_namespace}}
 
 test: .env
 	$(tox)
