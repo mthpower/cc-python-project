@@ -41,13 +41,13 @@ isort: .env
 	$(isort) -rc {{cookiecutter.py_namespace}}
 
 test: .env
-	$(tox)
+	$(tox) -e py35
 
 freeze-requirements: .env
 	$(pip-compile) --generate-hashes requirements.in
 	$(pip-compile) --generate-hashes test_requirements.in
 
-docker-build: build
+docker-build:
 	docker build . -t {{cookiecutter.project_slug}}
 
 docker-run:
