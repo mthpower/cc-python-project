@@ -12,3 +12,4 @@ pep8
 pep8-naming
 pytest
 pytest-cov
+pytest-watch

@@ -21,7 +21,7 @@ help:
 .env:
 	python3 -m venv .env --clear
 	$(pip) install --upgrade pip
-	$(pip) install --upgrade wheel setuptools tox pip-tools isort
+	$(pip) install --upgrade wheel setuptools tox tox-virtualenv-no-download isort virtualenv pip-tools
 
 clean:
 	rm -rf build/
@@ -38,10 +38,10 @@ lint: .env
 	$(tox) -e lint
 
 isort: .env
-	$(isort) -rc {{cookiecutter.py_namespace}}
+	$(isort) -rc {{cookiecutter.py_namespace}} tests
 
 test: .env
-	$(tox) -e py35
+	$(tox)
 
 freeze-requirements: .env
 	$(pip-compile) --generate-hashes requirements.in
